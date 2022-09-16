@@ -1,0 +1,81 @@
+{
+    "Cave Tables": {
+        "Small": {
+            "Table A": {
+                "Common": 6
+            },
+            "Table B": {
+                "Common": 5,
+                "Uncommon": 1
+            }
+        },
+        "Medium": {
+            "Table A": {
+                "Common": 5,
+                "Uncommon": 2
+            },
+            "Table B": {
+                "Common": 4,
+                "Uncommon": 3
+            }
+        },
+        "Large": {
+            "Table A": {
+                "Common": 6,
+                "Uncommon": 3,
+                "Rare": 1
+            },
+            "Table B": {
+                "Common": 5,
+                "Uncommon": 4,
+                "Rare": 1
+            }
+        }
+    },
+    "Gem Tables": {
+        "Common": {
+            "Units": "1d6",
+            "Table": {
+                "1": "Malachite",
+                "2": "Tiger Eye",
+                "3": "Turquoise",
+                "4": "Citrine",
+                "5": "Onyx",
+                "6": "Quartz",
+                "7": "Zircon",
+                "8": "Amethyst",
+                "9": "Garnet",
+                "10": "Jade",
+                "11": "Spinel",
+                "12": "Tourmaline"
+            }
+        },
+        "Uncommon": {
+            "Units": "1d4",
+            "Table": {
+                "1": "Alexandrite",
+                "2": "Aquamarine",
+                "3": "Blue Spinel",
+                "4": "Peridot",
+                "5": "Topaz"
+            }
+        },
+        "Rare": {
+            "Units": "1d1",
+            "Table": {
+                "1": "Black Opal",
+                "2": "Blue Sapphire",
+                "3": "Emerald",
+                "4": "Fire Opal",
+                "5": "Opal",
+                "6": "Star Ruby",
+                "7": "Star Sapphire",
+                "8": "Yellow Sapphire",
+                "9": "Black Sapphire",
+                "10": "Diamond",
+                "11": "Jacinth",
+                "12": "Ruby"
+            }
+        }
+    }
+}
