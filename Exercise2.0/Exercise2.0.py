@@ -13,7 +13,7 @@ print(
 print("Why?")
 print(
     f"If at the very minimum, simply to make your life easier, there will be plenty of times "
-    f"where you commit a breaking change, or end up introducing a bug into your code that wasn't"
+    f"where you commit a breaking change, or end up introducing a bug into your code that wasn't "
     f"previously there, and version management will help you weed out the source of it.\n"
     f"Additionally version management also conveniently acts as a backup of your project, "
     f"if anything were to happen to your local project, you'll always have some sort of backup "
