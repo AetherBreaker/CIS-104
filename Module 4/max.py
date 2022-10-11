@@ -5,8 +5,8 @@ from typing import Iterable, Union
 def myMax(*args: Union[str, int, bool]):
     newArgs = []
     for item in args:
-        if isinstance(args[0], Iterable) and not (
-            isinstance(args[0], str) or issubclass(args[0].__class__, str)
+        if isinstance(item, Iterable) and not (
+            isinstance(item, str) or issubclass(item.__class__, str)
         ):
             newArgs.extend(item)
         else:
