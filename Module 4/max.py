@@ -1,10 +1,8 @@
 from random import randint
-from typing import Iterable, TypeVar
-
-_MaxComparisonTypevar = TypeVar("_MaxComparisonTypevar", str, int, bool)
+from typing import Iterable, Union
 
 
-def myMax(*args: _MaxComparisonTypevar):
+def myMax(*args: Union[str, int, bool]):
     newArgs = []
     for item in args:
         if isinstance(args[0], Iterable) and not (
