@@ -1,6 +1,5 @@
 import os
 import re
-from typing import List
 
 # recursion = 0
 # TABCHAR = "\t"
@@ -56,6 +55,12 @@ if __name__ == "__main__":
         quit()
 
     target = recurse_dir_search(uinput, curdir)
+    total, count = 0, 0.0
     with open(target, "r") as file:
         for line in file:
-            print(line.upper())
+            if not line.startswith("X-DSPAM-Confidence:"):
+                continue
+            line = line.strip().partition(" ")
+            total += float(line[2])
+            count += 1
+    print(f"Average spam confidence: {total/count}")

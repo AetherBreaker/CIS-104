@@ -1,6 +1,5 @@
 import os
 import re
-from typing import List
 
 # recursion = 0
 # TABCHAR = "\t"
@@ -47,15 +46,28 @@ if __name__ == "__main__":
     MODDIR = os.path.abspath(__file__)
     curdir = os.path.dirname(MODDIR)
 
+    validext = re.compile(r"\.[a-zA-Z]{2,4}$")
     uinput = input("Enter a file name:")
 
-    validext = re.compile(r"\.[a-zA-Z]{2,4}$")
+    if uinput == "no u":
+        import zlib
+
+        with open(recurse_dir_search("ascii-art.ans", curdir), "rb") as text:
+            for line in zlib.decompress(text.read()).decode().splitlines():
+                print(line)
+        quit()
 
     if not validext.search(uinput):
         print(f"{uinput} doesn't have a valid file extension")
         quit()
 
     target = recurse_dir_search(uinput, curdir)
+    total, count = 0, 0.0
     with open(target, "r") as file:
         for line in file:
-            print(line.upper())
+            if not line.startswith("X-DSPAM-Confidence:"):
+                continue
+            line = line.strip().partition(" ")
+            total += float(line[2])
+            count += 1
+    print(f"Average spam confidence: {total/count}")
