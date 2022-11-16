@@ -16,6 +16,7 @@ def recurse_dir_search(filetarget: str, current_directory: str):
     # global recursion
     # recursion += 1
     path = current_directory
+    validext = re.compile(r"\.[a-zA-Z]{2,4}$")
     # print(f"{recursion*TABCHAR}{path}")
     dirlist = os.listdir(path)
     # print(f"{recursion*TABCHAR}for loop:")
