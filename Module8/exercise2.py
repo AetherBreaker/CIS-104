@@ -15,4 +15,6 @@ if __name__ == "__main__":
             len(words) < 3
         ):  # Now checks for lenths less than three, instead of just length 0
             continue
+        if words[0] != "From":
+            continue
         print(words[2])
