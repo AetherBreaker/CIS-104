@@ -6,12 +6,12 @@ sys.path.insert(
     1, os.getcwd()
 )  # this adds the working directory to the path so that we can import the function from Module7
 
-from Module7.exercise2 import recurse_dir_search
+from CIS104Lib.functions import recurse_dir_search
 
 matchpat = re.compile(r"From[^:]")
 
 fname = input("Enter file name: ")
-path = recurse_dir_search(fname, os.path.join(os.getcwd(), "Module7"))
+path = recurse_dir_search(fname)
 count = 0
 
 with open(path) as fh:

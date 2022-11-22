@@ -8,11 +8,10 @@ sys.path.insert(
 from Module7.exercise2 import recurse_dir_search
 
 fname = input("Enter file name: ")
-path = recurse_dir_search(fname, os.path.dirname(os.path.abspath(__file__)))
+path = recurse_dir_search(fname)
 wordset = set()
 
 with open(path) as fh:
-
     for line in fh:
         line = line.rstrip().split()
         for word in line:

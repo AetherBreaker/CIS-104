@@ -1,40 +1,12 @@
 import os
 import re
+import sys
 
-# recursion = 0
-# TABCHAR = "\t"
+sys.path.insert(
+    1, os.getcwd()
+)  # this adds the working directory to the path so that we can import the function from Module7
 
-
-def recurse_dir_search(filetarget: str, current_directory: str):
-    """This is just a custom function for recursively searching the entire current directory
-    for the inputed file, including searching through all subfolders.
-
-    The commented print functions are from debugging, they use the commented global var recursion
-    combined with tab characters to track how many layers deep into recursion the function goes
-    during execution.
-    """
-    # global recursion
-    # recursion += 1
-    path = current_directory
-    validext = re.compile(r"\.[a-zA-Z]{2,4}$")
-    # print(f"{recursion*TABCHAR}{path}")
-    dirlist = os.listdir(path)
-    # print(f"{recursion*TABCHAR}for loop:")
-    for filename in dirlist:
-        # print(f"{recursion*TABCHAR}\t{filename}")
-        if filename == filetarget:
-            path = os.path.join(current_directory, filetarget)
-            # print(f"{recursion*TABCHAR}\t{path}")
-            return path
-        elif not validext.search(filename):
-            try:
-                return recurse_dir_search(filetarget, os.path.join(path, filename))
-            except FileNotFoundError:
-                continue
-    # print(f"{recursion*TABCHAR}end loop")
-    # recursion -= 1
-    raise (FileNotFoundError)
-
+from CIS104Lib.functions import recurse_dir_search
 
 """This detects whether this python module is being ran as a script, or being imported
 if it is being ran directly, the builtin __name__ variable will equal "__main__" otherwise
@@ -44,16 +16,13 @@ This allows you to run this file as a script, while still allowing you to import
 func for use in other python modules without accidentally running the script below.
 """
 if __name__ == "__main__":
-    MODDIR = os.path.abspath(__file__)
-    curdir = os.path.dirname(MODDIR)
-
     validext = re.compile(r"\.[a-zA-Z]{2,4}$")
     uinput = input("Enter a file name:")
 
     if uinput == "no u":
         import zlib
 
-        with open(recurse_dir_search("ascii-art.ans", curdir), "rb") as text:
+        with open(recurse_dir_search("ascii-art.ans"), "rb") as text:
             for line in zlib.decompress(text.read()).decode().splitlines():
                 print(line)
         quit()
@@ -62,7 +31,7 @@ if __name__ == "__main__":
         print(f"{uinput} doesn't have a valid file extension")
         quit()
 
-    target = recurse_dir_search(uinput, curdir)
+    target = recurse_dir_search(uinput)
     total, count = 0, 0.0
     with open(target, "r") as file:
         for line in file:
