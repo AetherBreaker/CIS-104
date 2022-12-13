@@ -1,0 +1,17 @@
+1.What is Git and why is it useful? Give specific examples of situations where you would want to use Git.
+
+Git  is useful for situations where you want to keep track of changes to your code and work on the same code with multiple people. It also saves all versions of your code, so if you make a mistake you can go back to a previous version.
+
+2.Why would you want to create your own function? Give an example.
+
+You would want to create your own function when there is a block of code that you may reuse multiple times. For example, if you have a block of code that you use to calculate the area of a circle, you could create a function that takes the radius as an argument and returns the area.
+
+Using functions is also helpful for grouping code, rather than having a single long script, containing multiple blocks of code each doing a different thing, it can be confusing to navigate and understand. Using functions allows you to group code into logical chunks, making it easier to understand.
+
+3.Describe what lists are. Give an example using a list to solve a coding problem.
+
+Lists are a data type that can contain multiple values. For example, if you wanted to store the names of all the students in a class, you could create a list containing all the names. Lists are useful for storing multiple values, and can be used to solve problems such as finding the average of a set of numbers.
+
+4.Describe how an application would use a database. Give an example of an application you use that has a database as a critical component.
+
+An application would use a database to store information. An example of an application that has a database as a critical component would actually be my own discord bot, which stores information about the D&D characters of the users that make use of my bot, using a database for storing this data instead of storing the data locally allows the data to be easily shared across multiple instances of the bot, meaning I can develope the bot on my local machine and then deploy it to a server and still access the same data from both instances.
