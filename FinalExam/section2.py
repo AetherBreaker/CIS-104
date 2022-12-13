@@ -18,7 +18,9 @@ from typing import List, Tuple
 #     "26.27",
 # ]
 
-
+"""I decided to expand the scope of this a little bit to try and remove floating point inaccuracy by trying something
+that I recently learned about, apparently many embedded system processors can't actually perform floating point division
+so they usually just handle decimals by converting them all to integers with a fixed number of digits after the decimal."""
 if __name__ == "__main__":
     # This list will hold tuples with the integer part and decimal part of each number
     inputlist = []
