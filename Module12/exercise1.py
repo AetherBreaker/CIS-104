@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Install the required modules `validators` and `yarl` by running
 # `pip install validators` and `pip install yarl` in your terminal
 import socket
@@ -29,3 +30,27 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketvar:
 
 
 # used openai chatgpt to automatically add verbose comments to the code, very impressive
+=======
+import os
+import re
+import sys
+from datetime import datetime
+
+sys.path.insert(
+    1, os.getcwd()
+)  # this adds the working directory to the path so that we can import the function from Module7
+
+from CIS104Lib.functions import recurse_dir_search
+
+if __name__ == "__main__":
+    count = 0
+    file = "mbox.txt"
+    fpath = recurse_dir_search(file)
+    inp = input("Enter a regular expression: ")
+    targetpattern = re.compile(inp)
+    with open(fpath) as fhand:
+        for line in fhand:
+            if targetpattern.search(line):
+                count += 1
+    print(f"{file} had {count} lines that matched {inp}")
+>>>>>>> f5d57a16bbcb2ad40a0c7659f51397f0e8458507

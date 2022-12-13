@@ -9,7 +9,7 @@ sys.path.insert(
 
 from CIS104Lib.functions import recurse_dir_search
 
-count = []
+count = {}
 
 
 if __name__ == "__main__":
@@ -19,7 +19,15 @@ if __name__ == "__main__":
         for line in fhand:
             if targetpattern.match(line):
                 line = line.strip().split()
-                user = line[1]
                 time = datetime.strptime(" ".join(line[2:]), "%a %b %d %H:%M:%S %Y")
-                print("%H" % time.hour)
-                pass
+                count[f"{time.hour:02d}"] = count.get(f"{time.hour:02d}", 0) + 1
+
+    print(
+        "\n".join(
+            f"{hour} {count}"
+            for hour, count in sorted(
+                ((hour, count) for hour, count in count.items()),
+                key=lambda x: int(x[0]),
+            )
+        )
+    )
