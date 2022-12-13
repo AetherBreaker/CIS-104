@@ -1,5 +1,5 @@
 # Install the required modules `validators` and `yarl` by running
-# `pip freeze > devrequirements.txt` in your terminal
+# `pip freeze > requirements.txt` in your terminal
 import socket
 
 import validators
