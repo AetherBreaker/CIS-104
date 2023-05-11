@@ -7,10 +7,6 @@ DATALOC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 def recurse_dir_search(filetarget: str, current_directory: str = DATALOC) -> str:
     """This is just a custom function for recursively searching the entire current directory
     for the inputed file, including searching through all subfolders.
-
-    The commented print functions are from debugging, they use the commented global var recursion
-    combined with tab characters to track how many layers deep into recursion the function goes
-    during execution.
     """
     validext = re.compile(r"\.[a-zA-Z]{2,4}$")
     path = current_directory
